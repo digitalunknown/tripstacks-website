@@ -21,11 +21,22 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="site-header">
+    <>
+      {open ? (
+        <button
+          type="button"
+          className="menu-backdrop"
+          aria-label="Close menu"
+          onClick={() => setOpen(false)}
+        />
+      ) : null}
+
+      <header className="site-header">
       <div className="site-header-inner">
         <div className="logo-wrap">
           <Link href="/" className="logo" aria-label="TripStacks home">
-            <img src="/logo.png" alt="TripStacks" width={50} height={50} />
+            <img src="/logo.png" alt="" width={50} height={50} />
+            <span className="logo-name">TripStacks</span>
           </Link>
           <span className="coming-label">V2.0 is coming</span>
         </div>
@@ -75,5 +86,6 @@ export function Header() {
         </div>
       ) : null}
     </header>
+    </>
   );
 }
