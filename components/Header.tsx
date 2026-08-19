@@ -41,19 +41,19 @@ export function Header() {
           <span className="coming-label">V2.0 is coming</span>
         </div>
 
-        <nav className="nav-links" aria-label="Primary">
-          <Link href="/" className={pathname === "/" ? "is-current" : undefined}>
-            Home
-          </Link>
-          <Link
-            href="/privacy-policy"
-            className={pathname === "/privacy-policy" ? "is-current" : undefined}
-          >
-            Privacy Policy
-          </Link>
-        </nav>
-
         <div className="header-actions">
+          <nav className="nav-links" aria-label="Primary">
+            <Link href="/" className={pathname === "/" ? "is-current" : undefined}>
+              Home
+            </Link>
+            <Link
+              href="/privacy-policy"
+              className={pathname === "/privacy-policy" ? "is-current" : undefined}
+            >
+              Privacy Policy
+            </Link>
+          </nav>
+
           <a
             className="download-link"
             href={APP_STORE_URL}
@@ -78,8 +78,15 @@ export function Header() {
 
       {open ? (
         <div className="mobile-menu">
-          <Link href="/">Home</Link>
-          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/" className={pathname === "/" ? "is-current" : undefined}>
+            Home
+          </Link>
+          <Link
+            href="/privacy-policy"
+            className={pathname === "/privacy-policy" ? "is-current" : undefined}
+          >
+            Privacy Policy
+          </Link>
           <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
             Download Now
           </a>

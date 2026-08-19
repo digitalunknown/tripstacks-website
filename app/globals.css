@@ -111,7 +111,7 @@ img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 28px;
 }
 
 .nav-links a,
@@ -121,12 +121,25 @@ img {
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--muted);
-  transition: color 0.2s var(--ease);
+  transition: color 0.2s var(--ease), font-weight 0.2s var(--ease);
 }
 
 .nav-links a:hover,
 .mobile-menu a:hover {
   color: var(--text);
+}
+
+.nav-links a.is-current,
+.mobile-menu a.is-current {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
 }
 
 .download-link {
@@ -148,13 +161,6 @@ img {
 .download-link:hover {
   color: #101010;
   opacity: 0.85;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
 }
 
 .menu-toggle {
