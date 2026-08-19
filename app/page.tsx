@@ -53,8 +53,8 @@ export default function HomePage() {
               <img
                 src="/app-store-badge.svg"
                 alt="Download on the App Store"
-                width={245}
-                height={82}
+                width={180}
+                height={60}
               />
             </a>
           </div>

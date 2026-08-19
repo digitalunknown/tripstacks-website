@@ -23,9 +23,12 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <Link href="/" className="logo" aria-label="TripStacks home">
-          <img src="/logo.png" alt="TripStacks" width={50} height={50} />
-        </Link>
+        <div className="logo-wrap">
+          <Link href="/" className="logo" aria-label="TripStacks home">
+            <img src="/logo.png" alt="TripStacks" width={50} height={50} />
+          </Link>
+          <span className="coming-label">V2.0 is coming</span>
+        </div>
 
         <nav className="nav-links" aria-label="Primary">
           <Link href="/" className={pathname === "/" ? "is-current" : undefined}>
@@ -47,14 +50,6 @@ export function Header() {
             rel="noopener noreferrer"
           >
             Download Now
-            <span className="download-arrow" aria-hidden="true">
-              <svg viewBox="0 0 18 16" width="16" height="16">
-                <path
-                  d="M17.781 8.031 11.031 14.781a.75.75 0 0 1-1.062-1.061L15.44 8.25H.75a.75.75 0 0 1 0-1.5h14.69L9.969 1.281A.75.75 0 1 1 11.031.22l6.75 6.75a.749.749 0 0 1 0 1.061Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
           </a>
 
           <button

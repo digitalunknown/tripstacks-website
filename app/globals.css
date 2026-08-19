@@ -46,27 +46,35 @@ img {
 }
 
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 20;
   background: var(--header-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .site-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
-  padding: 0 36px;
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 80px;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+  min-width: 0;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  width: 200px;
   height: 50px;
   flex: none;
   overflow: hidden;
@@ -78,6 +86,20 @@ img {
   object-fit: cover;
 }
 
+.coming-label {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(230, 107, 62, 0.16);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -85,9 +107,8 @@ img {
 }
 
 .nav-links a,
-.download-link,
 .mobile-menu a {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -96,7 +117,6 @@ img {
 }
 
 .nav-links a:hover,
-.download-link:hover,
 .mobile-menu a:hover {
   color: var(--text);
 }
@@ -105,21 +125,21 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  color: var(--text);
-  height: 24px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: #101010;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: opacity 0.2s var(--ease);
 }
 
-.download-arrow {
-  display: grid;
-  place-items: center;
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s var(--ease);
-}
-
-.download-link:hover .download-arrow {
-  transform: translateX(3px);
+.download-link:hover {
+  color: #101010;
+  opacity: 0.85;
 }
 
 .header-actions {
@@ -127,7 +147,6 @@ img {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-  width: 200px;
 }
 
 .menu-toggle {
@@ -209,12 +228,12 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100px;
+  height: 84px;
 }
 
 .store-badge img {
-  width: 245px;
-  height: 82px;
+  width: 180px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -346,11 +365,16 @@ img {
 }
 
 .policy-body h2 {
-  margin-top: 16px;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.policy-body h2:first-of-type {
+  margin-top: 0;
 }
 
 .policy-body ul,
@@ -388,8 +412,10 @@ img {
     padding: 0 20px;
   }
 
-  .logo {
-    width: auto;
+  .coming-label {
+    font-size: 11px;
+    height: 24px;
+    padding: 0 8px;
   }
 
   .nav-links,
@@ -426,6 +452,11 @@ img {
   .hero h1,
   .policy h1 {
     font-size: 40px;
+  }
+
+  .policy-body h2 {
+    font-size: 22px;
+    margin-top: 28px;
   }
 
   .feature-grid {
