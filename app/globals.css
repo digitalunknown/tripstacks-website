@@ -1,5 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap");
 
 :root {
   --bg: #101010;
@@ -23,7 +22,7 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "General Sans", Inter, sans-serif;
+  font-family: Manrope, sans-serif;
 }
 
 a {
@@ -116,12 +115,42 @@ img {
 
 .nav-links a,
 .mobile-menu a {
+  position: relative;
+  display: inline-grid;
+  justify-items: center;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--muted);
-  transition: color 0.2s var(--ease), font-weight 0.2s var(--ease);
+  transition: color 0.28s var(--ease);
+}
+
+.nav-links a span,
+.mobile-menu a span {
+  grid-area: 1 / 1;
+}
+
+.nav-links a span[aria-hidden],
+.mobile-menu a span[aria-hidden] {
+  font-weight: 700;
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s var(--ease);
 }
 
 .nav-links a:hover,
@@ -129,10 +158,19 @@ img {
   color: var(--text);
 }
 
+.nav-links a:hover::after {
+  transform: scaleX(0.45);
+}
+
 .nav-links a.is-current,
 .mobile-menu a.is-current {
   font-weight: 700;
   color: var(--text);
+}
+
+.nav-links a.is-current::after,
+.nav-links a.is-current:hover::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -300,12 +338,22 @@ img {
 }
 
 .feature-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   color: var(--accent);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 8px;
+}
+
+.feature-eyebrow svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 .feature-copy h2 {
@@ -384,7 +432,7 @@ img {
 }
 
 .policy-body strong {
-  font-family: Inter, "General Sans", sans-serif;
+  font-family: Manrope, sans-serif;
   font-weight: 700;
 }
 

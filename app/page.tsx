@@ -1,8 +1,10 @@
+import { Award, ListChecks, Luggage, Sparkles } from "lucide-react";
 import { APP_STORE_URL } from "@/lib/site";
 
 const FEATURES = [
   {
     src: "/feature-1.png",
+    icon: Luggage,
     eyebrow: "Trips",
     title: "Upcoming, past, and unscheduled — all stacked.",
     body: "Create trips in seconds, then keep every one organized as it moves from idea to itinerary to memory.",
@@ -10,6 +12,7 @@ const FEATURES = [
   },
   {
     src: "/feature-2.png",
+    icon: Sparkles,
     eyebrow: "Plan",
     title: "AI that plans the day and finds the places.",
     body: "Describe the vibe. TripStacks builds itineraries and suggests places that actually fit how you travel.",
@@ -17,6 +20,7 @@ const FEATURES = [
   },
   {
     src: "/feature-3.png",
+    icon: ListChecks,
     eyebrow: "Essentials",
     title: "Everything you need, in one place.",
     body: "Maps, packing lists, reservations, and the details that matter — sitting with the trip, not scattered across apps.",
@@ -24,12 +28,13 @@ const FEATURES = [
   },
   {
     src: "/feature-4.png",
+    icon: Award,
     eyebrow: "Profile",
     title: "A travel profile that grows with you.",
     body: "Track your stats, unlock badges, and watch your trips add up into a profile that’s actually yours.",
     alt: "TripStacks travel profile, stats, and badges",
   },
-] as const;
+];
 
 export default function HomePage() {
   return (
@@ -66,18 +71,24 @@ export default function HomePage() {
       </section>
 
       <section className="feature-grid" aria-label="TripStacks features">
-        {FEATURES.map((feature) => (
-          <article className="feature" key={feature.src}>
-            <div className="feature-copy">
-              <p className="feature-eyebrow">{feature.eyebrow}</p>
-              <h2>{feature.title}</h2>
-              <p>{feature.body}</p>
-            </div>
-            <div className="feature-visual">
-              <img src={feature.src} alt={feature.alt} width={1080} height={1620} />
-            </div>
-          </article>
-        ))}
+        {FEATURES.map((feature) => {
+          const Icon = feature.icon;
+          return (
+            <article className="feature" key={feature.src}>
+              <div className="feature-copy">
+                <p className="feature-eyebrow">
+                  <Icon aria-hidden="true" />
+                  {feature.eyebrow}
+                </p>
+                <h2>{feature.title}</h2>
+                <p>{feature.body}</p>
+              </div>
+              <div className="feature-visual">
+                <img src={feature.src} alt={feature.alt} width={1080} height={1620} />
+              </div>
+            </article>
+          );
+        })}
       </section>
     </main>
   );

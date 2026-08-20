@@ -44,13 +44,15 @@ export function Header() {
         <div className="header-actions">
           <nav className="nav-links" aria-label="Primary">
             <Link href="/" className={pathname === "/" ? "is-current" : undefined}>
-              Home
+              <span>Home</span>
+              <span aria-hidden="true">Home</span>
             </Link>
             <Link
               href="/privacy-policy"
               className={pathname === "/privacy-policy" ? "is-current" : undefined}
             >
-              Privacy Policy
+              <span>Privacy Policy</span>
+              <span aria-hidden="true">Privacy Policy</span>
             </Link>
           </nav>
 
@@ -79,13 +81,15 @@ export function Header() {
       {open ? (
         <div className="mobile-menu">
           <Link href="/" className={pathname === "/" ? "is-current" : undefined}>
-            Home
+            <span>Home</span>
+            <span aria-hidden="true">Home</span>
           </Link>
           <Link
             href="/privacy-policy"
             className={pathname === "/privacy-policy" ? "is-current" : undefined}
           >
-            Privacy Policy
+            <span>Privacy Policy</span>
+            <span aria-hidden="true">Privacy Policy</span>
           </Link>
           <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
             Download Now
